@@ -13,15 +13,18 @@ const fetchBook = () => {
       booksObj.forEach((book) => {
         console.log(book.title);
         const col = document.createElement("div");
-        col.className = "col-12 col-sm-6 col-md-3";
+        col.className = "col-12 col-sm-6 col-md-4 col-lg-3";
 
-        col.innerHTML = `<div class="card" style="width: 18rem">
-            <img src="${book.img}" class="card-img-top" alt="book image" />
+        col.innerHTML = `
+            <div class="card">
+            <img src="${book.img}" class="card-img-top cover-img" alt="book image" />
             <div class="card-body">
-              <h5 class="card-title"> ${book.title}</h5>
+              <h5 class="card-title text-truncate"> ${book.title}</h5>
               <p class="card-text"> Price: ${book.price} $</p>
               <a href="#" class="btn btn-primary">Info </a>
-              <a href="#" class="btn btn-primary"> Add to Cart </a>
+              <a href="#" class="btn btn-primary"> Add to Cart </a> 
+              </div>
+              </div>
         `;
         row.appendChild(col);
       });
