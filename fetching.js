@@ -8,10 +8,9 @@ const fetchBook = () => {
     })
     .then((booksObj) => {
       console.log(booksObj);
-      console.log(booksObj.data);
 
-      const row = document.querySelector(row);
-      booksObj.data.forEach((book) => {
+      const row = document.querySelector(".row");
+      booksObj.forEach((book) => {
         console.log(book.title);
         const col = document.createElement("div");
         col.className = "col-12 col-sm-6 col-md-3";
@@ -24,6 +23,7 @@ const fetchBook = () => {
               <a href="#" class="btn btn-primary">Info </a>
               <a href="#" class="btn btn-primary"> Add to Cart </a>
         `;
+        row.appendChild(col);
       });
     })
 
